@@ -16,31 +16,57 @@ header {
 h1 {
     font-family: 'Lora', serif;
     font-size: 2.5em;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.5em;
 }
 
+h2 {
+    font-size: 1.5em;
+    margin-top: 2em;
+}
+
+nav {
+    background: #f0eae1;
+    padding: 0.8em 1em;
+    text-align: center;
+}
+nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: #3a2e2e;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 2em 1.2em;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.cta-buttons {
+    margin-top: 1.5em;
+}
 .cta-buttons .btn {
-    padding: 0.6em 1.2em;
+    padding: 0.8em 1.4em;
     margin: 0.5em;
     text-decoration: none;
     display: inline-block;
     border-radius: 8px;
     font-weight: bold;
+    font-size: 1em;
 }
-
 .hijau {
     background-color: #7eaa92;
     color: white;
 }
-
 .coklat {
     background-color: #a0522d;
     color: white;
-}
-
-.about, .cards, .footer {
-    padding: 2em 1em;
-    text-align: center;
 }
 
 .cards {
@@ -48,18 +74,24 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
+    padding: 2em 1em;
 }
-
 .card {
     background: white;
     border-radius: 12px;
     padding: 1.2em;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     width: 250px;
+    text-decoration: none;
+    color: inherit;
+}
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-.footer {
-    font-style: italic;
+footer {
+    text-align: center;
+    padding: 2em 1em;
     background: #f7f2eb;
-    padding: 1.5em;
+    font-style: italic;
 }
