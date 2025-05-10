@@ -39,6 +39,38 @@ header img {
   width: 60px;
   margin-bottom: 0.5em;
 }
+.hero-header {
+  padding: 80px 20px 60px;
+  text-align: center;
+  background-image: url('images/floral-header-light.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: #fdf7f1;
+}
+
+.header-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  background-image: url('images/icon-daisy.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8em;
+  margin-bottom: 0.2em;
+  color: #5e3f2f;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #7c6a59;
+}
 
 h1 {
   font-family: 'Playfair Display', serif;
