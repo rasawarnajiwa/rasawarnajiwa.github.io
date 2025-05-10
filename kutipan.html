@@ -52,7 +52,11 @@
     <a href="about.html">Tentang</a>
   </nav>
 
-  <!-- Header -->
+  <div style="text-align: center; padding: 1em;">
+  <input type="text" id="searchInput" placeholder="Cari kutipan..." style="padding: 0.5em 1em; width: 80%; max-width: 400px; border-radius: 8px; border: 1px solid #ccc;">
+</div>
+
+<!-- Header -->
   <header class="hero-header fade-in">
     <div class="header-icon"></div>
     <h1>Kutipan Favorit</h1>
@@ -69,11 +73,11 @@
         </a>
       </p>
 
-      <div style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; font-style: italic;">
-        <p>“Ada kata-kata yang tak hanya dibaca, tapi mengendap—menjadi doa.”</p>
-        <p>“Kata adalah jendela, bukan dinding.”</p>
-        <p>“Saat hati bicara, dunia pun diam mendengarkan.”</p>
-      </div>
+      <div id="quoteList" style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; font-style: italic;">
+  <p>“Ada kata-kata yang tak hanya dibaca, tapi mengendap—menjadi doa.”</p>
+  <p>“Kata adalah jendela, bukan dinding.”</p>
+  <p>“Saat hati bicara, dunia pun diam mendengarkan.”</p>
+</div>
     </section>
   </main>
 
@@ -103,6 +107,20 @@
 
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
+    }
+  
+    const searchInput = document.getElementById('searchInput');
+    const quoteList = document.getElementById('quoteList');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        const keyword = this.value.toLowerCase();
+        const quotes = quoteList.querySelectorAll('p');
+        quotes.forEach(p => {
+          const text = p.textContent.toLowerCase();
+          p.style.display = text.includes(keyword) ? 'block' : 'none';
+        });
+      });
     }
   </script>
 
