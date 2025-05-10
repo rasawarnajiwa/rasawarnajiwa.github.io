@@ -5,6 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tentang Farida - Rasa Warna Jiwa</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 1.5em auto;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .dark-toggle {
+      float: right;
+      background: none;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .kutipan {
+      font-style: italic;
+      text-align: center;
+      font-size: 1.1em;
+      color: #5c4a4a;
+      margin: 2em auto;
+      max-width: 600px;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,23 +44,26 @@
   <a href="sudut.html">Sudut</a>
   <a href="galeri.html">Galeri</a>
   <a href="about.html">Tentang</a>
+  <button onclick="document.body.classList.toggle('dark')" class="dark-toggle">🌓</button>
 </nav>
 
 <main>
+  <img src="images/farida.jpg" alt="Foto Farida" class="avatar" />
+
   <h1>🌿 Tentang Farida</h1>
   <h2 style="font-weight: normal;">Rasa, Warna, dan Jiwa : Sebuah Perjalanan Pulang ke Dalam Diri</h2>
 
-  <p>
+  <p class="center">
     Halo, saya Farida.<br>
     Lahir di Purworejo, sebuah kabupaten kecil di perbatasan barat Yogyakarta, tempat sawah, gunung, dan laut berpelukan dalam satu cakrawala. 
     Kini saya tinggal di Bogor, kota yang rimbun dan penuh cahaya hijau. Di sinilah saya terus tumbuh, menyatu dengan alam, dan menulis tentang hidup yang perlahan.
   </p>
 
-  <p>
+  <p class="center">
     Saya percaya bahwa perjalanan bukan sekadar soal tempat yang kita datangi, tapi tentang siapa diri yang kita temui di sepanjang jalan itu.
   </p>
 
-  <p>
+  <p class="center">
     Blog ini saya ciptakan sebagai ruang sunyi nan hangat, tempat saya menuliskan cerita, rasa, refleksi, dan warna-warna hidup dari pengalaman sehari-hari. 
     Harapannya, setiap kunjunganmu ke sini menjadi momen kecil untuk bernapas, merenung, dan pulang ke diri sendiri.
   </p>
@@ -49,24 +79,29 @@
   </ul>
 
   <h2 style="margin-top: 2em;">📬 Mari Terhubung</h2>
-  <p>
+  <p class="center">
     Saya percaya, pertemuan bahkan yang tak terduga bisa jadi awal dari perjalanan baru.<br>
     Mari saling menyapa melalui:
   </p>
-  <p>
+  <p class="center">
     📩 <strong>Email:</strong> farida584@gmail.com<br>
     📷 <strong>Instagram:</strong> @faridabudiarti5
   </p>
 
-  <p style="margin-top: 2em;">Terima kasih sudah singgah di sudut kecil dunia saya.<br>
+  <p class="center" style="margin-top: 2em;">Terima kasih sudah singgah di sudut kecil dunia saya.<br>
   Semoga langkahmu selalu dipenuhi cahaya dan kehangatan.</p>
-  <p style="margin-top: 2em;">“Karena hidup sejatinya adalah perjalanan rasa — dari satu ruang hati ke ruang hati yang lain."</p>
 
-
+  <blockquote class="kutipan">
+    “Karena hidup sejatinya adalah perjalanan rasa — dari satu ruang hati ke ruang hati yang lain.”
+  </blockquote>
 </main>
 
 <footer>
   <p>Terima kasih telah menyapa ruang ini dengan jiwamu 🌿</p>
+  <div class="social">
+    <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
 </footer>
 
 </body>
