@@ -2,46 +2,77 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catatan Perjalanan - Rasa Warna Jiwa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perjalanan – Rasa Warna Jiwa</title>
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Meta -->
+  <meta name="description" content="Catatan perjalanan jiwa, alam, dan kota – tempat langkah menjadi makna.">
+  <meta property="og:title" content="Perjalanan – Rasa Warna Jiwa">
+  <meta property="og:image" content="https://rasawarnajiwa.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
 </head>
+
 <body>
 
-<nav class="sticky-nav">
-  <a href="index.html">🏠 Beranda</a>
-  <a href="catatan.html">Catatan Jiwa</a>
-  <a href="jurnal.html">Jurnal Rasa</a>
-  <a href="kutipan.html">Kutipan</a>
-  <a href="perjalanan.html">Perjalanan</a>
-  <a href="sudut.html">Sudut</a>
-  <a href="galeri.html">Galeri</a>
-  <a href="about.html">Tentang</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="sticky">
+    <a href="index.html">← Beranda</a>
+    <a href="catatan.html">Catatan Jiwa</a>
+    <a href="jurnal.html">Jurnal Rasa</a>
+    <a href="perjalanan.html" class="active">Perjalanan</a>
+    <a href="about.html">Tentang</a>
+  </nav>
 
-<main>
-  <h1>⛰️ Catatan Perjalanan</h1>
-  <h2 style="font-weight: normal;">Perjalanan ke alam, kota, dan ruang-ruang batin</h2>
+  <!-- Header -->
+  <header class="hero-header fade-in">
+    <div class="header-icon"></div>
+    <h1>Catatan Perjalanan</h1>
+    <p class="subtitle">Melangkah bukan hanya berpindah tempat, tapi berpulang ke dalam diri.</p>
+  </header>
 
-  <p>
-    Halaman ini merekam langkah-langkah kecil dalam perjalanan — bukan hanya geografis, tapi juga spiritual dan emosional. 
-    Sebuah ruang untuk menuliskan kesan dari alam, kota, pegunungan, air, dan rasa pulang yang tak selalu berbentuk rumah.
-  </p>
+  <!-- Main Content -->
+  <main>
+    <section class="scroll-fade" style="max-width: 760px; margin: auto; padding: 2em 1em;">
+      <p style="text-align: center; margin-bottom: 2em;">
+        ✨ Baca catatan perjalanan jiwa dan alam selengkapnya di Notion:<br>
+        <a href="https://www.notion.so/rasawarnajiwa/Catatan-Perjalanan-1e280cf2ce258080a6e5e1a94575b609?pvs=4" target="_blank">
+          Lihat Catatan Perjalanan di Notion →
+        </a>
+      </p>
 
-  <p style="text-align: center; margin-top: 2em;">
-    ✨ Koleksi lengkap bisa dibaca di:<br><br>
-    <a href="https://www.notion.so/rasawarnajiwa/Catatan-Perjalanan-1e280cf2ce258080a6e5e1a94575b609?pvs=4" 
-       class="btn hijau" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       ⛺ Buka Catatan Perjalanan di Notion
-    </a>
-  </p>
-</main>
+      <div style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
+        <p>Setiap perjalanan meninggalkan jejak.</p>
+        <p>Bukan hanya pada peta atau foto, tapi di dada yang belajar menerima dunia dengan mata baru.</p>
+        <p>Di halaman ini, aku menuliskan catatan kecil tentang tempat-tempat yang pernah kulewati, dan rasa-rasa yang ikut pulang bersamaku.</p>
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>Semoga langkahmu menemukan cahaya dalam setiap perjalanan 🧭</p>
-</footer>
+  <!-- Footer -->
+  <footer class="fade-in">
+    <p>🌍 Catatan Perjalanan oleh Farida Budiarti</p>
+    <div class="social-icons">
+      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const elements = document.querySelectorAll('.scroll-fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
