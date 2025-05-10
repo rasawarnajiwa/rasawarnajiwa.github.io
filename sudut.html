@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sudut – Rasa Warna Jiwa</title>
+  <title>Sudut Kecil – Rasa Warna Jiwa</title>
 
   <!-- Favicon & Fonts -->
   <link rel="icon" href="images/favicon.png" type="image/png" />
@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <!-- Meta -->
-  <meta name="description" content="Sudut adalah ruang spontan untuk intuisi, ide, dan momen reflektif yang hadir tanpa rencana.">
-  <meta property="og:title" content="Sudut – Rasa Warna Jiwa">
+  <meta name="description" content="Sudut Kecil adalah ruang spontan untuk intuisi, ide, dan momen reflektif yang hadir tanpa rencana.">
+  <meta property="og:title" content="Sudut Kecil – Rasa Warna Jiwa">
   <meta property="og:image" content="https://rasawarnajiwa.github.io/images/favicon.png">
   <meta name="twitter:card" content="summary">
 </head>
@@ -26,14 +26,14 @@
     <a href="catatan.html">Catatan Jiwa</a>
     <a href="jurnal.html">Jurnal Rasa</a>
     <a href="perjalanan.html">Perjalanan</a>
-    <a href="sudut.html" class="active">Sudut</a>
+    <a href="sudut.html" class="active">Sudut Kecil</a>
     <a href="about.html">Tentang</a>
   </nav>
 
   <!-- Header -->
   <header class="hero-header fade-in">
     <div class="header-icon"></div>
-    <h1>Sudut</h1>
+    <h1>Sudut Kecil</h1>
     <p class="subtitle">Ruang kecil untuk momen besar: intuisi, ide, dan rasa yang mendesak ingin ditulis.</p>
   </header>
 
@@ -58,4 +58,22 @@
   <!-- Footer -->
   <footer class="fade-in">
     <p>🌀 Sudut Kecil oleh Farida Budiarti</p>
-    <div class="social-icons"
+    <div class="social-icons">
+      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const elements = document.querySelectorAll('.scroll-fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
