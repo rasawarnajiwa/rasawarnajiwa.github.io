@@ -9,7 +9,7 @@
   <link rel="icon" href="images/favicon.png" type="image/png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 
   <!-- SEO Meta -->
   <meta name="description" content="Rasa Warna Jiwa adalah ruang sunyi untuk refleksi batin, jurnal rasa, perjalanan, kutipan, dan cerita personal.">
@@ -29,6 +29,7 @@
 </head>
 
 <body>
+
   <!-- Navigation -->
   <nav class="sticky">
     <a href="index.html">🏠 Beranda</a>
@@ -41,16 +42,16 @@
     <a href="about.html">Tentang</a>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero-header">
+  <!-- Hero Header -->
+  <header class="hero-header fade-in">
     <div class="header-icon"></div>
     <h1>Rasa Warna Jiwa</h1>
     <p class="subtitle">🌿 Ruang sunyi nan hangat untuk pulang ke diri sendiri.</p>
   </header>
 
-  <!-- Main Content -->
+  <!-- Grid Menu -->
   <main>
-    <section class="card-grid">
+    <section class="card-grid scroll-fade">
       <a href="catatan.html" class="card">
         <h3>Catatan Jiwa</h3>
         <p>Refleksi batin, puisi, dan spiritualitas personal</p>
@@ -75,22 +76,34 @@
         <h3>Galeri Foto</h3>
         <p>Dokumentasi visual dari rasa dan perjalanan jiwa</p>
       </a>
-      <a href="about.html" class="card center">
+      <a href="about.html" class="card" style="margin: 0 auto;">
         <h3>Tentang Farida</h3>
         <p>Kenalan hangat dengan penulis, cerita hidup & perjalanan jiwa</p>
       </a>
     </section>
 
-    <p class="closing">“Setiap rasa punya rumahnya di jiwa yang terbuka.”</p>
+    <p class="closing scroll-fade">“Setiap rasa punya rumahnya di jiwa yang terbuka.”</p>
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="fade-in">
     <p>Terima kasih telah menyapa ruang ini dengan jiwamu 🌿</p>
     <div class="social-icons">
       <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
       <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const elements = document.querySelectorAll('.scroll-fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
