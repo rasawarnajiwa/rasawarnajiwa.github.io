@@ -2,82 +2,68 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rasa Warna Jiwa</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .dark-toggle {
-      float: right;
-      background: none;
-      border: none;
-      font-size: 1.2em;
-      margin-left: 1em;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
+  <nav class="sticky">
+    <a href="index.html">🏠 Beranda</a>
+    <a href="catatan.html">Catatan Jiwa</a>
+    <a href="jurnal.html">Jurnal Rasa</a>
+    <a href="kutipan.html">Kutipan</a>
+    <a href="perjalanan.html">Perjalanan</a>
+    <a href="sudut.html">Sudut</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="about.html">Tentang</a>
+  </nav>
 
-<nav class="sticky-nav">
-  <a href="index.html">🏠 Beranda</a>
-  <a href="catatan.html">Catatan Jiwa</a>
-  <a href="jurnal.html">Jurnal Rasa</a>
-  <a href="kutipan.html">Kutipan</a>
-  <a href="perjalanan.html">Perjalanan</a>
-  <a href="sudut.html">Sudut</a>
-  <a href="galeri.html">Galeri</a>
-  <a href="about.html">Tentang</a>
-  <button onclick="document.body.classList.toggle('dark')" class="dark-toggle">🌓</button>
-</nav>
+  <main class="center">
+    <h1>Rasa Warna Jiwa</h1>
+    <p class="subtitle">Ruang sunyi nan hangat untuk pulang ke diri sendiri.</p>
 
-<header>
-  <h1>Rasa Warna Jiwa</h1>
-  <p>Rasa yang Menemani Jiwa. Warna yang Menyapa Rasa. Tulisan yang Membisikkan Makna.</p>
-  <div class="cta-buttons">
-    <a href="catatan.html" class="btn hijau">Baca Catatan Jiwa</a>
-    <a href="jurnal.html" class="btn coklat">Masuki Jurnal Rasa</a>
-  </div>
-</header>
+    <section class="card-grid">
+      <a href="catatan.html" class="card">
+        <h3>Catatan Jiwa</h3>
+        <p>Refleksi batin, puisi, dan spiritualitas personal</p>
+      </a>
+      <a href="jurnal.html" class="card">
+        <h3>Jurnal Rasa</h3>
+        <p>Resep sehat, herbal, comfort food dan rasa penyembuhan</p>
+      </a>
+      <a href="kutipan.html" class="card">
+        <h3>Kutipan Favorit</h3>
+        <p>Ayat dan kutipan reflektif pilihan</p>
+      </a>
+      <a href="perjalanan.html" class="card">
+        <h3>Catatan Perjalanan</h3>
+        <p>Perjalanan ke alam, kota, dan ruang jiwa</p>
+      </a>
+      <a href="sudut.html" class="card">
+        <h3>Sudut Kecil</h3>
+        <p>Ide, momen, dan intuisi spontan</p>
+      </a>
+      <a href="galeri.html" class="card">
+        <h3>Galeri Foto</h3>
+        <p>Dokumentasi visual dari rasa dan perjalanan jiwa</p>
+      </a>
+    </section>
 
-<section class="about">
-  <h2>Tentang Website</h2>
-  <p>Tempat pulang dari lelah. Sebuah catatan untuk yang sedang menenangkan diri, menyembuhkan luka, atau sekadar ingin hidup lebih pelan.</p>
-
-  <div class="card-container">
-    <div class="card">
-      <h3><a href="catatan.html">Catatan Jiwa</a></h3>
-      <p>Refleksi batin, puisi, dan spiritualitas personal</p>
-    </div>
-    <div class="card">
-      <h3><a href="jurnal.html">Jurnal Rasa</a></h3>
-      <p>Resep sehat, herbal, comfort food dan rasa penyembuhan</p>
-    </div>
-    <div class="card">
-      <h3><a href="kutipan.html">Kutipan Favorit</a></h3>
-      <p>Ayat dan kutipan reflektif pilihan</p>
-    </div>
-    <div class="card">
-      <h3><a href="perjalanan.html">Catatan Perjalanan</a></h3>
-      <p>Perjalanan ke alam, kota, dan ruang jiwa</p>
-    </div>
-    <div class="card">
-      <h3><a href="sudut.html">Sudut Kecil</a></h3>
-      <p>Ide, momen, dan intuisi spontan</p>
-    </div>
-    <div class="card">
-      <h3><a href="galeri.html">Galeri Foto</a></h3>
-      <p>Dokumentasi visual dari rasa dan perjalanan jiwa</p>
-    </div>
-    <div class="card">
-      <h3><a href="about.html">Tentang Farida</a></h3>
+    <section class="about-preview">
+      <a href="about.html">Tentang Farida</a>
       <p>Kenalan hangat dengan penulis, cerita hidup & perjalanan jiwa</p>
+    </section>
+
+    <p class="closing">“Setiap rasa punya rumahnya di jiwa yang terbuka.”</p>
+  </main>
+
+  <footer>
+    <p>Terima kasih telah menyapa ruang ini dengan jiwamu 🌿</p>
+    <div class="social-icons">
+      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-  </div>
-</section>
-
-<footer>
-  <p>“Setiap rasa punya rumahnya di jiwa yang terbuka.”</p>
-</footer>
-
+  </footer>
 </body>
 </html>
