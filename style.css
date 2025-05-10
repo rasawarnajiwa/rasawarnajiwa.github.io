@@ -114,10 +114,12 @@ h1 {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .card-grid a.card:last-child {
-    grid-column: span 1;
+    max-width: 90%;
   }
+}
+
 }
 
 /* Quote */
