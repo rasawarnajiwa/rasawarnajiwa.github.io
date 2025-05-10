@@ -2,46 +2,80 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Galeri Foto - Rasa Warna Jiwa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri – Rasa Warna Jiwa</title>
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Meta -->
+  <meta name="description" content="Galeri visual dari rasa, warna, dan jiwa yang ditangkap dalam momen.">
+  <meta property="og:title" content="Galeri – Rasa Warna Jiwa">
+  <meta property="og:image" content="https://rasawarnajiwa.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
 </head>
+
 <body>
 
-<nav class="sticky-nav">
-  <a href="index.html">🏠 Beranda</a>
-  <a href="catatan.html">Catatan Jiwa</a>
-  <a href="jurnal.html">Jurnal Rasa</a>
-  <a href="kutipan.html">Kutipan</a>
-  <a href="perjalanan.html">Perjalanan</a>
-  <a href="sudut.html">Sudut</a>
-  <a href="galeri.html">Galeri</a>
-  <a href="about.html">Tentang</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="sticky">
+    <a href="index.html">← Beranda</a>
+    <a href="catatan.html">Catatan Jiwa</a>
+    <a href="jurnal.html">Jurnal Rasa</a>
+    <a href="galeri.html" class="active">Galeri</a>
+    <a href="about.html">Tentang</a>
+  </nav>
 
-<main>
-  <h1>📷 Galeri Foto</h1>
-  <h2 style="font-weight: normal;">Dokumentasi visual dari rasa dan perjalanan jiwa</h2>
+  <!-- Header -->
+  <header class="hero-header fade-in">
+    <div class="header-icon"></div>
+    <h1>Galeri</h1>
+    <p class="subtitle">Jejak visual dari rasa, warna, dan jiwa yang ingin diabadikan.</p>
+  </header>
 
-  <p>
-    Di halaman ini, kamu akan menemukan serpihan momen dalam bentuk gambar: lanskap, benda, dan fragmen kehidupan yang menyimpan kisah diam-diam.
-    Galeri ini menjadi jendela rasa — tempat di mana cahaya dan emosi bertemu.
-  </p>
+  <!-- Main Content -->
+  <main>
+    <section class="scroll-fade" style="max-width: 960px; margin: auto; padding: 2em 1em;">
+      <p style="text-align: center; margin-bottom: 2em;">
+        ✨ Lihat versi lengkap galeri di Notion:<br>
+        <a href="https://www.notion.so/rasawarnajiwa/Galeri-1e580cf2ce2580a3a98af4e6d620c003?pvs=4" target="_blank">
+          Buka Galeri Rasa di Notion →
+        </a>
+      </p>
 
-  <p style="text-align: center; margin-top: 2em;">
-    🌿 Lihat versi lengkap galeri di:<br><br>
-    <a href="https://www.notion.so/rasawarnajiwa/Galeri-1e580cf2ce2580a3a98af4e6d620c003?pvs=4" 
-       class="btn hijau" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       📸 Buka Galeri di Notion
-    </a>
-  </p>
-</main>
+      <div class="gallery-grid">
+        <img src="images/teh-hangat.jpg" alt="Teh Hangat" />
+        <img src="images/ubi-ungu.jpg" alt="Parfait Ubi Ungu" />
+        <img src="images/wedang-uwuh.jpg" alt="Wedang Uwuh Pagi" />
+        <img src="images/dapur-hening.jpg" alt="Ruang Dapur Sunyi" />
+        <img src="images/makanan-jiwa.jpg" alt="Makanan yang Menenangkan" />
+        <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>Terima kasih telah merasakan warna melalui lensa jiwa 📷🌱</p>
-</footer>
+  <!-- Footer -->
+  <footer class="fade-in">
+    <p>🖼️ Galeri Rasa Warna Jiwa oleh Farida Budiarti</p>
+    <div class="social-icons">
+      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const elements = document.querySelectorAll('.scroll-fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
