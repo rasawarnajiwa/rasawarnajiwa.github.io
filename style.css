@@ -1,107 +1,128 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap');
+
+/* Reset & Base */
 body {
-  font-family: 'Inter', sans-serif;
-  background: #fefcf9;
-  color: #3a2e2e;
   margin: 0;
-  padding: 0;
-  transition: background 0.3s, color 0.3s;
-}
-
-h1 {
-  font-family: 'Lora', serif;
-  font-size: 2.5em;
-  margin-bottom: 0.3em;
+  font-family: 'Nunito', sans-serif;
+  background: url('images/bg-floral.png') no-repeat center top fixed;
+  background-size: cover;
   color: #3a2e2e;
 }
 
-.subtitle {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 1.1em;
-  color: #6a6a6a;
-  margin-top: -0.5em;
-  margin-bottom: 2em;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5em;
-  max-width: 960px;
-  margin: 0 auto 3em auto;
-  padding: 0 1em;
-}
-
-.card {
-  background: #ffffff;
-  border: 2px solid #e0e6d9;
-  border-left: 6px solid #b7c9a6;
-  border-radius: 12px;
-  padding: 1.2em;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-left-color: #9cae86;
-}
-
-.card h3 {
-  color: #4d4d3f;
-  margin-top: 0;
-}
-
-.card p {
-  color: #6b6b6b;
-  font-size: 0.95em;
-}
-
-.closing {
-  font-style: italic;
-  text-align: center;
-  font-size: 1.1em;
-  color: #7b6e66;
-  margin-bottom: 3em;
-}
-
-footer {
-  text-align: center;
-  padding: 2em 1em;
-  background-color: #f5f1ea;
-  font-size: 0.95em;
-  color: #5d534c;
-  border-top: 1px solid #e0dcd2;
-}
-
-footer .social-icons a {
-  margin: 0 0.5em;
-  color: #7a6f68;
-  font-size: 1.4em;
-}
-
-footer .social-icons a:hover {
-  color: #4e4e4e;
-}
-
+/* Navigation */
 nav {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
   position: sticky;
   top: 0;
-  background: #fff9f3;
-  padding: 0.8em;
-  z-index: 100;
-  text-align: center;
-  border-bottom: 1px solid #eee5da;
+  z-index: 10;
+  border-bottom: 1px solid #eee;
 }
 
 nav a {
   margin: 0 1em;
   text-decoration: none;
-  color: #4f4038;
-  font-weight: bold;
+  color: #5c4a4a;
+  font-weight: 600;
 }
 
 nav a:hover {
-  color: #8b4c3b;
+  color: #a36767;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2em 1em 1em;
+}
+
+header img {
+  width: 60px;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin-bottom: 0.2em;
+  color: #6a4c4c;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  font-weight: 300;
+  color: #7e5a5a;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1em;
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.card {
+  background: #fffaf7;
+  border-radius: 12px;
+  padding: 1.2em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
+  text-decoration: none;
+  color: #4a3b3b;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #854c4c;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #5f4d4d;
+}
+
+/* Quote */
+.closing {
+  text-align: center;
+  font-style: italic;
+  color: #7a5e5e;
+  margin: 2em auto;
+  max-width: 600px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2em 1em;
+  font-size: 0.9em;
+  color: #8c7b7b;
+  background: rgba(255, 250, 245, 0.95);
+  border-top: 1px solid #eee;
+}
+
+.social-icons {
+  margin-top: 1em;
+}
+
+.social-icons a {
+  margin: 0 0.5em;
+  font-size: 1.2em;
+  color: #7b5c5c;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #a76e6e;
 }
