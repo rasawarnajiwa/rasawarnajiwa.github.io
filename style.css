@@ -1,4 +1,4 @@
-
+/* --- Global Styles --- */
 body {
   font-family: 'Inter', sans-serif;
   background: #fdfaf6;
@@ -8,21 +8,25 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-header {
-  text-align: center;
-  padding: 3em 1em;
-  background: linear-gradient(#e9f5ea, #fff5e6);
-}
-
 h1 {
   font-family: 'Lora', serif;
   font-size: 2.5em;
   margin-bottom: 0.2em;
+  text-align: center;
 }
 
 h2 {
   font-size: 1.6em;
   font-family: 'Lora', serif;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #444;
+  margin-top: 0.5em;
   text-align: center;
 }
 
@@ -33,8 +37,39 @@ p {
   line-height: 1.6;
 }
 
+/* --- Header --- */
+header {
+  text-align: center;
+  padding: 3em 1em;
+  background: linear-gradient(#e9f5ea, #fff5e6);
+}
+
+/* --- Navigation --- */
+nav {
+  position: sticky;
+  top: 0;
+  background: #fffaf0;
+  padding: 0.8em;
+  z-index: 100;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #3a2e2e;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #6b4c3b;
+}
+
+/* --- CTA Buttons --- */
 .cta-buttons {
   margin-top: 1em;
+  text-align: center;
 }
 
 .btn {
@@ -55,16 +90,12 @@ p {
   background-color: #8b4c39;
 }
 
-.about {
-  padding: 3em 1em;
-  text-align: center;
-}
-
-.card-container {
+/* --- Card Grid (Home Page) --- */
+.card-container, .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1em;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  max-width: 900px;
   margin: 2em auto;
   padding: 0 1em;
 }
@@ -73,7 +104,7 @@ p {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  padding: 1.2em;
+  padding: 1.5em;
   transition: transform 0.3s;
 }
 
@@ -90,6 +121,17 @@ p {
   color: #6b4c3b;
 }
 
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* --- Footer --- */
 footer {
   text-align: center;
   padding: 2em 1em;
@@ -114,57 +156,9 @@ footer .social a:hover {
   color: #3a2e2e;
 }
 
-/* Sticky navigation (if added later) */
-nav {
-  position: sticky;
-  top: 0;
-  background: #fffaf0;
-  padding: 0.8em;
-  z-index: 100;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
-nav a {
-  margin: 0 1em;
-  text-decoration: none;
-  color: #3a2e2e;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #6b4c3b;
-}
-
-/* Dark mode */
-body.dark {
-  background: #1e1e1e;
-  color: #e6e6e6;
-}
-
-body.dark header {
-  background: linear-gradient(#2a2a2a, #1a1a1a);
-}
-
-body.dark .card {
-  background: #2a2a2a;
-  color: #e6e6e6;
-}
-
-body.dark footer {
-  background: #222;
-  color: #aaa;
-}
-
-body.dark a {
-  color: #b9c4b9;
-}
-
-body.dark nav {
-  background: #1c1c1c;
-  border-color: #333;
-}
-.kutipan {
+/* --- Quotes / Closing Notes --- */
+.kutipan,
+.closing {
   font-style: italic;
   text-align: center;
   font-size: 1.1em;
@@ -172,16 +166,31 @@ body.dark nav {
   margin: 2em auto;
   max-width: 600px;
 }
+
+/* --- Dark Mode --- */
 body.dark {
   background-color: #1e1e1e;
   color: #e6e6e6;
 }
+
+body.dark header {
+  background: linear-gradient(#2a2a2a, #1a1a1a);
+}
+
+body.dark nav {
+  background: #1c1c1c;
+  border-color: #333;
+}
+
 body.dark a {
   color: #d6d6ff;
 }
+
 body.dark .card {
   background-color: #2a2a2a;
+  color: #e6e6e6;
 }
+
 body.dark footer {
   background-color: #111;
   color: #ccc;
