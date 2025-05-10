@@ -1,7 +1,6 @@
-/* --- Global Styles --- */
 body {
   font-family: 'Inter', sans-serif;
-  background: #fdfaf6;
+  background: #fefcf9;
   color: #3a2e2e;
   margin: 0;
   padding: 0;
@@ -11,187 +10,98 @@ body {
 h1 {
   font-family: 'Lora', serif;
   font-size: 2.5em;
-  margin-bottom: 0.2em;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.6em;
-  font-family: 'Lora', serif;
-  text-align: center;
-  margin-top: 2em;
+  margin-bottom: 0.3em;
+  color: #3a2e2e;
 }
 
 .subtitle {
+  font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 1.2em;
-  color: #444;
-  margin-top: 0.5em;
+  font-size: 1.1em;
+  color: #6a6a6a;
+  margin-top: -0.5em;
+  margin-bottom: 2em;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  max-width: 960px;
+  margin: 0 auto 3em auto;
+  padding: 0 1em;
+}
+
+.card {
+  background: #ffffff;
+  border: 2px solid #e0e6d9;
+  border-left: 6px solid #b7c9a6;
+  border-radius: 12px;
+  padding: 1.2em;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-left-color: #9cae86;
+}
+
+.card h3 {
+  color: #4d4d3f;
+  margin-top: 0;
+}
+
+.card p {
+  color: #6b6b6b;
+  font-size: 0.95em;
+}
+
+.closing {
+  font-style: italic;
   text-align: center;
+  font-size: 1.1em;
+  color: #7b6e66;
+  margin-bottom: 3em;
 }
 
-p {
-  font-size: 1em;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* --- Header --- */
-header {
+footer {
   text-align: center;
-  padding: 3em 1em;
-  background: linear-gradient(#e9f5ea, #fff5e6);
+  padding: 2em 1em;
+  background-color: #f5f1ea;
+  font-size: 0.95em;
+  color: #5d534c;
+  border-top: 1px solid #e0dcd2;
 }
 
-/* --- Navigation --- */
+footer .social-icons a {
+  margin: 0 0.5em;
+  color: #7a6f68;
+  font-size: 1.4em;
+}
+
+footer .social-icons a:hover {
+  color: #4e4e4e;
+}
+
 nav {
   position: sticky;
   top: 0;
-  background: #fffaf0;
+  background: #fff9f3;
   padding: 0.8em;
   z-index: 100;
   text-align: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee5da;
 }
 
 nav a {
   margin: 0 1em;
   text-decoration: none;
-  color: #3a2e2e;
+  color: #4f4038;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #6b4c3b;
-}
-
-/* --- CTA Buttons --- */
-.cta-buttons {
-  margin-top: 1em;
-  text-align: center;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  margin: 0.5em;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
-
-.btn.hijau {
-  background-color: #6b8e7b;
-}
-
-.btn.coklat {
-  background-color: #8b4c39;
-}
-
-/* --- Card Grid (Home Page) --- */
-.card-container, .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5em;
-  max-width: 900px;
-  margin: 2em auto;
-  padding: 0 1em;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  padding: 1.5em;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card a {
-  text-decoration: none;
-  color: #3a2e2e;
-}
-
-.card a:hover {
-  color: #6b4c3b;
-}
-
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-}
-
-.card p {
-  font-size: 0.95em;
-  color: #555;
-}
-
-/* --- Footer --- */
-footer {
-  text-align: center;
-  padding: 2em 1em;
-  background-color: #faf7f0;
-  font-size: 0.95em;
-  color: #6a5e5e;
-  border-top: 1px solid #e0dcd2;
-}
-
-footer .social {
-  margin-top: 1em;
-}
-
-footer .social a {
-  margin: 0 0.5em;
-  text-decoration: none;
-  color: #6a5e5e;
-  font-size: 1.3em;
-}
-
-footer .social a:hover {
-  color: #3a2e2e;
-}
-
-/* --- Quotes / Closing Notes --- */
-.kutipan,
-.closing {
-  font-style: italic;
-  text-align: center;
-  font-size: 1.1em;
-  color: #5c4a4a;
-  margin: 2em auto;
-  max-width: 600px;
-}
-
-/* --- Dark Mode --- */
-body.dark {
-  background-color: #1e1e1e;
-  color: #e6e6e6;
-}
-
-body.dark header {
-  background: linear-gradient(#2a2a2a, #1a1a1a);
-}
-
-body.dark nav {
-  background: #1c1c1c;
-  border-color: #333;
-}
-
-body.dark a {
-  color: #d6d6ff;
-}
-
-body.dark .card {
-  background-color: #2a2a2a;
-  color: #e6e6e6;
-}
-
-body.dark footer {
-  background-color: #111;
-  color: #ccc;
+  color: #8b4c3b;
 }
