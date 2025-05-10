@@ -90,8 +90,9 @@ main {
 }
 
 footer {
-    text-align: center;
-    padding: 2em 1em;
-    background: #f7f2eb;
-    font-style: italic;
+  text-align: center;
+  padding: 2em 1em;
+  background: #f7f2eb;
+  font-style: italic;
 }
+
