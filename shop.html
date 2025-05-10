@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toko Digital – Rasa Warna Jiwa</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5em;
+      max-width: 960px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    .product-card {
+      background: #fffaf7;
+      border-radius: 12px;
+      padding: 1em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.8em;
+    }
+    .product-card h3 {
+      margin: 0.3em 0;
+      font-size: 1.1em;
+    }
+    .product-card p {
+      font-size: 0.9em;
+      color: #7a5e5e;
+    }
+    .product-card a {
+      display: inline-block;
+      margin-top: 0.8em;
+      padding: 0.5em 1em;
+      border-radius: 6px;
+      background-color: #a67c7c;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .product-card a:hover {
+      background-color: #875f5f;
+    }
+  </style>
+</head>
+<body>
+
+  $1
+    <a href="index.html">← Beranda</a>
+    <a href="catatan.html">Catatan Jiwa</a>
+    <a href="jurnal.html">Jurnal Rasa</a>
+    <a href="perjalanan.html">Perjalanan</a>
+    <a href="kutipan.html">Kutipan</a>
+    <a href="sudut.html">Sudut</a>
+    <a href="shop.html">Toko</a>
+    <a href="about.html">Tentang</a>
+  </nav>
+
+  <header class="hero-header fade-in">
+    <div class="header-icon"></div>
+    <h1>Toko Digital</h1>
+    <p class="subtitle">Produk digital dengan rasa dan makna: e-book, jurnal, resep, dan lainnya.</p>
+  </header>
+
+  <main>
+    <section class="shop-grid">
+      <div class="product-card">
+        <img src="images/ebook-1.jpg" alt="Ebook Jurnal Rasa" />
+        <h3>E-book: Jurnal Rasa</h3>
+        <p>36 halaman refleksi + resep sehat bergambar.</p>
+        <a href="#">Lihat Detail</a>
+      </div>
+      <div class="product-card">
+        <img src="images/ebook-2.jpg" alt="Jurnal Visual PDF" />
+        <h3>Jurnal Visual (PDF)</h3>
+        <p>Jurnal estetik untuk isi harian rasa & warna hidupmu.</p>
+        <a href="#">Lihat Detail</a>
+      </div>
+      <div class="product-card">
+        <img src="images/ebook-3.jpg" alt="Resep Comfort Food" />
+        <h3>Resep Comfort Food</h3>
+        <p>Kumpulan resep favorit dengan catatan batin.</p>
+        <a href="#">Lihat Detail</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>🛍️ Toko Digital oleh Farida Budiarti</p>
+    <div class="social-icons">
+      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
