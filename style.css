@@ -126,3 +126,16 @@ footer {
 .social-icons a:hover {
   color: #a76e6e;
 }
+/* Tampilan khusus untuk kartu terakhir: Tentang Farida */
+.card-grid a.card:last-child {
+  border: 1.5px dashed #c9b2b2;
+  background-color: #fff6f3;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card-grid a.card:last-child:hover {
+  background-color: #ffece6;
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
