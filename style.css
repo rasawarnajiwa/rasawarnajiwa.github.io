@@ -104,11 +104,15 @@ h1 {
   justify-self: center;
 }
 
-.card-grid a.card:last-child:hover {
-  background-color: #ffece6;
-  transform: scale(1.02);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+.card-grid a.card:last-child {
+  border: 1.5px dashed #d8bcbc;
+  background-color: #fff6f3;
+  text-align: center;
+  grid-column: 1 / -1; /* penuh dari awal ke akhir kolom */
+  max-width: 400px;
+  justify-self: center;
 }
+
 
 @media (max-width: 768px) {
   .card-grid a.card:last-child {
