@@ -2,46 +2,78 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kutipan Favorit - Rasa Warna Jiwa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kutipan – Rasa Warna Jiwa</title>
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Meta -->
+  <meta name="description" content="Koleksi kutipan favorit, ayat, dan kata-kata yang menyentuh jiwa dan menguatkan langkah.">
+  <meta property="og:title" content="Kutipan – Rasa Warna Jiwa">
+  <meta property="og:image" content="https://rasawarnajiwa.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
 </head>
+
 <body>
 
-<nav class="sticky-nav">
-  <a href="index.html">🏠 Beranda</a>
-  <a href="catatan.html">Catatan Jiwa</a>
-  <a href="jurnal.html">Jurnal Rasa</a>
-  <a href="kutipan.html">Kutipan</a>
-  <a href="perjalanan.html">Perjalanan</a>
-  <a href="sudut.html">Sudut</a>
-  <a href="galeri.html">Galeri</a>
-  <a href="about.html">Tentang</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="sticky">
+    <a href="index.html">← Beranda</a>
+    <a href="catatan.html">Catatan Jiwa</a>
+    <a href="jurnal.html">Jurnal Rasa</a>
+    <a href="perjalanan.html">Perjalanan</a>
+    <a href="kutipan.html" class="active">Kutipan</a>
+    <a href="about.html">Tentang</a>
+  </nav>
 
-<main>
-  <h1>📖 Kutipan Favorit</h1>
-  <h2 style="font-weight: normal;">Ayat, puisi, dan kalimat yang menyentuh hati</h2>
+  <!-- Header -->
+  <header class="hero-header fade-in">
+    <div class="header-icon"></div>
+    <h1>Kutipan Favorit</h1>
+    <p class="subtitle">Kata-kata yang menjadi lentera di tengah perjalanan batin.</p>
+  </header>
 
-  <p>
-    Halaman ini berisi kumpulan kutipan dari kitab, tokoh, pujangga, hingga percakapan hening dengan jiwa sendiri.
-    Setiap kalimat dipilih karena punya daya menyentuh, menggerakkan, atau menenangkan. Selamat menyerap makna dalam keheningan.
-  </p>
+  <!-- Main Content -->
+  <main>
+    <section class="scroll-fade" style="max-width: 760px; margin: auto; padding: 2em 1em;">
+      <p style="text-align: center; margin-bottom: 2em;">
+        ✨ Temukan kumpulan kutipan reflektif dan ayat pilihan di Notion:<br>
+        <a href="https://www.notion.so/rasawarnajiwa/Kutipan-Favorit-1ef80cf2ce258044b982c51339373638?pvs=4" target="_blank">
+          Baca Kutipan di Notion →
+        </a>
+      </p>
 
-  <p style="text-align: center; margin-top: 2em;">
-    ✨ Kumpulan lengkap dapat dibaca di Notion:<br><br>
-    <a href="https://www.notion.so/rasawarnajiwa/Kutipan-Favorit-1ef80cf2ce258044b982c51339373638" 
-       class="btn hijau" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       💬 Buka Koleksi Kutipan di Notion
-    </a>
-  </p>
-</main>
+      <div style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; font-style: italic;">
+        <p>“Ada kata-kata yang tak hanya dibaca, tapi mengendap menjadi doa.”</p>
+        <p>“Kata adalah jendela, bukan dinding.”</p>
+        <p>“Saat hati bicara, dunia pun diam mendengarkan.”</p>
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>Terima kasih telah membuka ruang untuk kata yang bermakna 📖🌸</p>
-</footer>
+  <!-- Footer -->
+  <footer class="fade-in">
+    <p>📜 Kutipan oleh Farida Budiarti</p>
+    <div class="social-icons">
+      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const elements = document.querySelectorAll('.scroll-fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
