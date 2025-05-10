@@ -126,15 +126,40 @@ footer {
 .social-icons a:hover {
   color: #a76e6e;
 }
-/* Tampilan khusus untuk kartu terakhir: Tentang Farida */
-.card-grid a.card:last-child {
-  border: 1.5px dashed #c9b2b2;
-  background-color: #fff6f3;
-  text-align: center;
-  transition: all 0.3s ease;
+/* Background Lembut */
+body {
+  background: url('images/bg-soft.png') center top no-repeat fixed;
+  background-size: cover;
+  background-color: #fffdfb; /* fallback */
 }
 
-.card-grid a.card:last-child:hover {
+/* Grid: Tengah jika item ganjil */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+  gap: 1.2em;
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+/* Spesial untuk "Tentang Farida" */
+.card-grid a.card:last-child {
+  border: 1.5px dashed #d8bcbc;
+  background-color: #fff6f3;
+  text-align: center;
+  grid-column: span 2; /* ini bantu agar di tengah jika jumlah item ganjil */
+  justify-self: center;
+}
+
+@media (max-width: 768px) {
+  .card-grid a.card:last-child {
+    grid-column: span 1;
+  }
+}
+
+d:last-child:hover {
   background-color: #ffece6;
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0,0,0,0.06);
