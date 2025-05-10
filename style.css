@@ -1,0 +1,65 @@
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fdfaf6;
+    color: #3a2e2e;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 3em 1em;
+    background: linear-gradient(#e9f5ea, #fff5e6);
+}
+
+h1 {
+    font-family: 'Lora', serif;
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+.cta-buttons .btn {
+    padding: 0.6em 1.2em;
+    margin: 0.5em;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.hijau {
+    background-color: #7eaa92;
+    color: white;
+}
+
+.coklat {
+    background-color: #a0522d;
+    color: white;
+}
+
+.about, .cards, .footer {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    width: 250px;
+}
+
+.footer {
+    font-style: italic;
+    background: #f7f2eb;
+    padding: 1.5em;
+}
