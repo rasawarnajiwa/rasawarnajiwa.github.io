@@ -172,3 +172,17 @@ body.dark nav {
   margin: 2em auto;
   max-width: 600px;
 }
+body.dark {
+  background-color: #1e1e1e;
+  color: #e6e6e6;
+}
+body.dark a {
+  color: #d6d6ff;
+}
+body.dark .card {
+  background-color: #2a2a2a;
+}
+body.dark footer {
+  background-color: #111;
+  color: #ccc;
+}
