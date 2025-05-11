@@ -37,19 +37,77 @@
 
   <!-- Main Content -->
   <main>
-    <section class="scroll-fade" style="max-width: 760px; margin: auto; padding: 2em 1em;">
-      <p style="text-align: center; margin-bottom: 2em;">
-        ✨ Temukan versi lengkap dan terupdate di Notion:<br>
-        <a href="https://www.notion.so/rasawarnajiwa/1e580cf2ce2580539252cb9fc196d290?v=1e580cf2ce2581ceba38000c9eaaa331&pvs=4" target="_blank">
-          Baca Catatan Jiwa di Notion →
-        </a>
-      </p>
-  <hr>
-<h3 style="text-align:center;">📖 Baca Catatan Jiwa Langsung di Web</h3>
-<ul style="line-height: 1.8;">
-  <li><a href="viewer.html?file=catatan-tanpa-ingat-waktu.md">Catatan Tanpa Ingat Waktu</a></li>
-  <li><a href="viewer.html?file=rasa-yang-begitu-cepat-pergi.md">Rasa yang Begitu Cepat Pergi</a></li>
-</ul>
+    <!-- HTML Struktur Arsip Berdasarkan Bulan -->
+<div id="arsip-catatan"></div>
+
+<script>
+fetch('posts/index.json')
+  .then(res => res.json())
+  .then(data => {
+    const arsip = document.getElementById('arsip-catatan');
+    const grouped = {};
+
+    data.forEach(item => {
+      if (!grouped[item.bulan]) grouped[item.bulan] = [];
+      grouped[item.bulan].push(item);
+    });
+
+    Object.keys(grouped).forEach(bulan => {
+      const section = document.createElement('section');
+      section.className = 'arsip-bulan';
+      const h3 = document.createElement('h3');
+      h3.textContent = bulan;
+      const ul = document.createElement('ul');
+
+      grouped[bulan].forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">${item.judul}</a>`;
+        ul.appendChild(li);
+      });
+
+      section.appendChild(h3);
+      section.appendChild(ul);
+      arsip.appendChild(section);
+    });
+  });
+</script>
+
+<style>
+.arsip-bulan {
+  margin-bottom: 2em;
+  padding: 1em;
+  background: #fffaf7;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.arsip-bulan h3 {
+  font-size: 1.2em;
+  color: #8b5e5e;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+.arsip-bulan ul {
+  padding-left: 1em;
+  margin: 0;
+  list-style: disc;
+}
+.arsip-bulan li {
+  margin-bottom: 0.6em;
+}
+.arsip-bulan a {
+  color: #5c3d3d;
+  text-decoration: none;
+  font-weight: 500;
+}
+.arsip-bulan a:hover {
+  text-decoration: underline;
+  color: #a65a5a;
+}
+</style>
+<h3 style="text-align:center;">📚 Arsip Catatan Jiwa</h3>
+<ul id="daftar-catatan"></ul>
+
   </main>
 
       <div style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
