@@ -48,9 +48,12 @@
       margin-bottom: 0.6em;
     }
     .arsip-bulan a {
-      color: #5c3d3d;
+      color: #3b1f1f;
       text-decoration: none;
       font-weight: 500;
+    }
+    body.dark .arsip-bulan a {
+      color: #e6e6e6;
     }
     .arsip-bulan a:hover {
       text-decoration: underline;
@@ -144,7 +147,7 @@
 
           grouped[bulan].forEach(item => {
             const li = document.createElement('li');
-            li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">${item.judul}</a>`;
+            li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">📄 ${item.judul}</a>`;
             ul.appendChild(li);
           });
 
