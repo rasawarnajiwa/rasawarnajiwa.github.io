@@ -1,26 +1,87 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catatan Jiwa – Rasa Warna Jiwa</title>
-
-  <!-- Favicon & Fonts -->
   <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-  <!-- Meta -->
-  <meta name="description" content="Catatan Jiwa adalah ruang untuk refleksi batin, puisi, dan renungan personal.">
-  <meta property="og:title" content="Catatan Jiwa – Rasa Warna Jiwa">
-  <meta property="og:image" content="https://rasawarnajiwa.github.io/images/favicon.png">
-  <meta name="twitter:card" content="summary">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background: #fffdfc;
+      color: #444;
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #1e1e1e;
+      color: #ccc;
+    }
+    .arsip-bulan {
+      margin-bottom: 2em;
+      padding: 1em;
+      background: #fffaf7;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    body.dark .arsip-bulan {
+      background: #2a2a2a;
+    }
+    .arsip-bulan h3 {
+      font-size: 1.2em;
+      color: #8b5e5e;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.3em;
+      margin-bottom: 0.5em;
+    }
+    .arsip-bulan ul {
+      padding-left: 1em;
+      margin: 0;
+      list-style: disc;
+    }
+    .arsip-bulan li {
+      margin-bottom: 0.6em;
+    }
+    .arsip-bulan a {
+      color: #5c3d3d;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .arsip-bulan a:hover {
+      text-decoration: underline;
+      color: #a65a5a;
+    }
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .scroll-fade.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #eae4dc;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- Navigation -->
+  <button class="toggle-mode" onclick="document.body.classList.toggle('dark')">🌙/☀️</button>
+
   <nav class="sticky">
     <a href="index.html">← Beranda</a>
     <a href="catatan.html" class="active">Catatan Jiwa</a>
@@ -28,108 +89,32 @@
     <a href="about.html">Tentang</a>
   </nav>
 
-  <!-- Header -->
   <header class="hero-header fade-in">
     <div class="header-icon"></div>
     <h1>Catatan Jiwa</h1>
     <p class="subtitle">Ruang refleksi batin dan napas sunyi yang dituliskan.</p>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- HTML Struktur Arsip Berdasarkan Bulan -->
-<div id="arsip-catatan"></div>
+    <h3 style="text-align:center;">📚 Arsip Catatan Jiwa</h3>
+    <div id="arsip-catatan"></div>
 
-<script>
-fetch('posts/index.json')
-  .then(res => res.json())
-  .then(data => {
-    const arsip = document.getElementById('arsip-catatan');
-    const grouped = {};
+    <div style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
+      <p>Aku menulis catatan ini seperti menyeduh teh hangat dengan perlahan, penuh perasaan.</p>
+      <p>Bukan sekadar untuk dikenang, tapi untuk dirasakan ulang. Karena setiap kalimat mengandung potongan kisah, dan setiap kisah mengajak kita duduk sejenak di dalam diri sendiri.</p>
+      <p>Selamat membaca, dengan hati yang terbuka dan secangkir kehangatan di tanganmu.</p>
+    </div>
 
-    data.forEach(item => {
-      if (!grouped[item.bulan]) grouped[item.bulan] = [];
-      grouped[item.bulan].push(item);
-    });
+    <section class="scroll-fade" style="max-width: 760px; margin: auto; padding: 2em 1em;">
+      <p style="text-align: center; margin-bottom: 2em;">
+        ✨ Temukan versi lengkap dan terupdate di Notion:<br>
+        <a href="https://www.notion.so/rasawarnajiwa/1e580cf2ce2580539252cb9fc196d290?v=1e580cf2ce2581ceba38000c9eaaa331&pvs=4" target="_blank">
+          Baca Catatan Jiwa di Notion →
+        </a>
+      </p>
+    </section>
+  </main>
 
-    Object.keys(grouped).forEach(bulan => {
-      const section = document.createElement('section');
-      section.className = 'arsip-bulan';
-      const h3 = document.createElement('h3');
-      h3.textContent = bulan;
-      const ul = document.createElement('ul');
-
-      grouped[bulan].forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">${item.judul}</a>`;
-        ul.appendChild(li);
-      });
-
-      section.appendChild(h3);
-      section.appendChild(ul);
-      arsip.appendChild(section);
-    });
-  });
-</script>
-
-<style>
-.arsip-bulan {
-  margin-bottom: 2em;
-  padding: 1em;
-  background: #fffaf7;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
-.arsip-bulan h3 {
-  font-size: 1.2em;
-  color: #8b5e5e;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.3em;
-  margin-bottom: 0.5em;
-}
-.arsip-bulan ul {
-  padding-left: 1em;
-  margin: 0;
-  list-style: disc;
-}
-.arsip-bulan li {
-  margin-bottom: 0.6em;
-}
-.arsip-bulan a {
-  color: #5c3d3d;
-  text-decoration: none;
-  font-weight: 500;
-}
-.arsip-bulan a:hover {
-  text-decoration: underline;
-  color: #a65a5a;
-}
-</style>
-<h3 style="text-align:center;">📚 Arsip Catatan Jiwa</h3>
-<ul id="daftar-catatan"></ul>
-
-  <main class="scroll-fade" style="max-width: 760px; margin: auto; padding: 2em 1em;">
-  
-  <section style="text-align: center; margin-bottom: 2em;">
-    <p>✨ Temukan versi lengkap dan terupdate di Notion:</p>
-    <a href="https://www.notion.so/rasawarnajiwa/1e580cf2ce2580539252cb9fc196d290?v=1e580cf2ce2581ceba38000c9eaaa331&pvs=4" target="_blank">
-      Baca Catatan Jiwa di Notion →
-    </a>
-  </section>
-
-  <div style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; margin-bottom: 2em;">
-    <p>Aku menulis catatan ini seperti menyeduh teh hangat dengan perlahan, penuh perasaan.</p>
-    <p>Bukan sekadar untuk dikenang, tapi untuk dirasakan ulang. Karena setiap kalimat mengandung potongan kisah, dan setiap kisah mengajak kita duduk sejenak di dalam diri sendiri.</p>
-    <p>Selamat membaca, dengan hati yang terbuka dan secangkir kehangatan di tanganmu.</p>
-  </div>
-
-  <h3 style="text-align:center;">📚 Arsip Catatan Jiwa</h3>
-  <div id="arsip-catatan"></div>
-
-</main>
-
-
-  <!-- Footer -->
   <footer class="fade-in">
     <p>🕊️ Catatan Jiwa oleh Farida Budiarti</p>
     <div class="social-icons">
@@ -138,8 +123,37 @@ fetch('posts/index.json')
     </div>
   </footer>
 
-  <!-- Scroll Animation Script -->
   <script>
+    fetch('posts/index.json')
+      .then(res => res.json())
+      .then(data => {
+        const arsip = document.getElementById('arsip-catatan');
+        const grouped = {};
+
+        data.forEach(item => {
+          if (!grouped[item.bulan]) grouped[item.bulan] = [];
+          grouped[item.bulan].push(item);
+        });
+
+        Object.keys(grouped).forEach(bulan => {
+          const section = document.createElement('section');
+          section.className = 'arsip-bulan';
+          const h3 = document.createElement('h3');
+          h3.textContent = bulan;
+          const ul = document.createElement('ul');
+
+          grouped[bulan].forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">${item.judul}</a>`;
+            ul.appendChild(li);
+          });
+
+          section.appendChild(h3);
+          section.appendChild(ul);
+          arsip.appendChild(section);
+        });
+      });
+
     const elements = document.querySelectorAll('.scroll-fade');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -148,22 +162,6 @@ fetch('posts/index.json')
     });
     elements.forEach(el => observer.observe(el));
   </script>
- <!-- Daftar Catatan Otomatis -->
-<ul id="daftar-catatan"></ul>
-
-<script>
-fetch('posts/index.json')
-  .then(res => res.json())
-  .then(data => {
-    const ul = document.getElementById('daftar-catatan');
-    data.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">${item.bulan} – ${item.judul}</a>`;
-      ul.appendChild(li);
-    });
-  });
-</script>
-
 
 </body>
 </html>
