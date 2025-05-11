@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catatan Jiwa – Viewer</title>
 
-  <!-- Font & Style -->
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -69,6 +69,18 @@
       color: #8c7b7b;
       background: rgba(255, 250, 245, 0.95);
     }
+
+    /* Scroll Fade Animation */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .scroll-fade.visible {
+      opacity: 1;
+      transform: none;
+    }
   </style>
 </head>
 <body>
@@ -78,8 +90,10 @@
     <a href="catatan.html">📝 Catatan Jiwa</a>
   </nav>
 
-  <main id="markdown-viewer">
-    <p>Memuat catatan...</p>
+  <main>
+    <div id="markdown-viewer" class="scroll-fade">
+      <p>Memuat catatan...</p>
+    </div>
   </main>
 
   <div class="back-link">
@@ -104,6 +118,17 @@
     } else {
       document.getElementById('markdown-viewer').innerHTML = '<p>Tidak ada file dipilih.</p>';
     }
+
+    // Scroll Fade Activation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    const target = document.querySelector('.scroll-fade');
+    if (target) observer.observe(target);
   </script>
 
 </body>
