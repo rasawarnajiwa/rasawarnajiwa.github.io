@@ -83,17 +83,22 @@
     });
     elements.forEach(el => observer.observe(el));
   </script>
-  <!-- Markdown Loader Script -->
-  <script>
-    fetch('posts/catatan-tanpa-ingat-waktu.md')
-      .then(response => response.text())
-      .then(text => {
-        document.getElementById('markdown-content').innerHTML = marked.parse(text);
-      })
-      .catch(() => {
-        document.getElementById('markdown-content').innerHTML = '<p>Gagal memuat catatan. Pastikan file .md tersedia.</p>';
-      });
-  </script>
+ <!-- Daftar Catatan Otomatis -->
+<ul id="daftar-catatan"></ul>
+
+<script>
+fetch('posts/index.json')
+  .then(res => res.json())
+  .then(data => {
+    const ul = document.getElementById('daftar-catatan');
+    data.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">${item.bulan} – ${item.judul}</a>`;
+      ul.appendChild(li);
+    });
+  });
+</script>
+
 
 </body>
 </html>
