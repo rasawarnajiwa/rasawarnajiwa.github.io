@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catatan Jiwa – Viewer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/favicon.png">
+  <title>Catatan Jiwa – Rasa Warna Jiwa</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
   <style>
     body {
       font-family: 'Nunito', sans-serif;
       margin: 0;
-      padding: 0;
       background: #fffdfc;
       color: #444;
       line-height: 1.7;
@@ -22,50 +21,6 @@
     body.dark {
       background: #1e1e1e;
       color: #ccc;
-    }
-    .container {
-      max-width: 700px;
-      margin: 4em auto;
-      padding: 0 1.5em;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    body.dark .container {
-      background: #2a2a2a;
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-      color: #6a4c4c;
-      margin-bottom: 0.5em;
-    }
-    .meta {
-      color: #999;
-      font-size: 0.9em;
-      margin-bottom: 2em;
-    }
-    .back-link, .nav-nextprev {
-      text-align: center;
-      margin-top: 2em;
-      padding-bottom: 2em;
-    }
-    .back-link a, .nav-nextprev a {
-      color: #6a4c4c;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 1em;
-    }
-    .back-link a:hover, .nav-nextprev a:hover {
-      text-decoration: underline;
-    }
-    .scroll-fade {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .scroll-fade.visible {
-      opacity: 1;
-      transform: none;
     }
     .toggle-mode {
       position: fixed;
@@ -78,52 +33,97 @@
       cursor: pointer;
       font-weight: bold;
     }
+    .content-area {
+      max-width: 760px;
+      margin: 3em auto;
+      padding: 2em;
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    body.dark .content-area {
+      background: rgba(40, 40, 40, 0.85);
+    }
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .scroll-fade.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2em;
+    }
+    .nav-buttons a {
+      text-decoration: none;
+      padding: 0.5em 1em;
+      background: #eee;
+      border-radius: 6px;
+    }
+    body.dark .nav-buttons a {
+      background: #333;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
 
   <button class="toggle-mode" onclick="document.body.classList.toggle('dark')">🌙/☀️</button>
 
-  <div class="container scroll-fade">
-    <div id="markdown-content">
-      <p>Memuat catatan...</p>
-    </div>
+  <nav class="sticky">
+    <a href="index.html">← Beranda</a>
+    <a href="catatan.html">Catatan Jiwa</a>
+    <a href="jurnal.html">Jurnal Rasa</a>
+    <a href="about.html">Tentang</a>
+  </nav>
 
-    <div class="nav-nextprev" id="nav-links"></div>
-    <div class="back-link">
-      <a href="catatan.html">← Kembali ke Daftar Catatan Jiwa</a>
+  <main>
+    <section id="markdown-viewer" class="content-area">
+      <p>Memuat catatan...</p>
+    </section>
+
+    <div class="nav-buttons" id="nav-buttons"></div>
+  </main>
+
+  <footer class="fade-in">
+    <p>🕊️ Catatan Jiwa oleh Farida Budiarti</p>
+    <div class="social-icons">
+      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-  </div>
+  </footer>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const file = params.get('file');
-    const posts = [
-      "2025-05/catatan-tanpa-ingat-waktu.md",
-      "2025-06/Hujan-bulan-juni.md",
-      "2025-07/Juli-datang-lagi.md"
-    ];
+    const urlParams = new URLSearchParams(window.location.search);
+    const file = urlParams.get('file');
 
-    const currentIndex = posts.indexOf(file);
+    fetch('posts/index.json')
+      .then(res => res.json())
+      .then(list => {
+        const index = list.findIndex(i => i.file === file);
+        const prev = list[index - 1];
+        const next = list[index + 1];
+        const nav = document.getElementById('nav-buttons');
+
+        if (prev) nav.innerHTML += `<a href="viewer.html?file=${prev.file}">← ${prev.judul}</a>`;
+        if (next) nav.innerHTML += `<a href="viewer.html?file=${next.file}">${next.judul} →</a>`;
+      });
+
     if (file) {
-      fetch('posts/' + file)
-        .then(res => res.text())
+      fetch(`posts/${file}`)
+        .then(response => response.text())
         .then(md => {
-          document.getElementById('markdown-content').innerHTML = marked.parse(md);
-
-          const nav = document.getElementById('nav-links');
-          if (currentIndex > 0) {
-            nav.innerHTML += `<a href="viewer.html?file=${posts[currentIndex - 1]}">← Sebelumnya</a>`;
-          }
-          if (currentIndex < posts.length - 1) {
-            nav.innerHTML += `<a href="viewer.html?file=${posts[currentIndex + 1]}">Berikutnya →</a>`;
-          }
+          document.getElementById('markdown-viewer').innerHTML = marked.parse(md);
         })
         .catch(() => {
-          document.getElementById('markdown-content').innerHTML = '<p>Gagal memuat catatan. File tidak ditemukan.</p>';
+          document.getElementById('markdown-viewer').innerHTML = '<p>Gagal memuat catatan. Pastikan file .md tersedia.</p>';
         });
     } else {
-      document.getElementById('markdown-content').innerHTML = '<p>Tidak ada file yang dipilih.</p>';
+      document.getElementById('markdown-viewer').innerHTML = '<p>Tidak ada file dipilih.</p>';
     }
 
     const elements = document.querySelectorAll('.scroll-fade');
