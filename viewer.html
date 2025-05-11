@@ -1,105 +1,94 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catatan Jiwa – Rasa Warna Jiwa</title>
-
-  <!-- Favicon & Fonts -->
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-  <!-- Meta -->
-  <meta name="description" content="Catatan Jiwa adalah ruang untuk refleksi batin, puisi, dan renungan personal.">
-  <meta property="og:title" content="Catatan Jiwa – Rasa Warna Jiwa">
-  <meta property="og:image" content="https://rasawarnajiwa.github.io/images/favicon.png">
-  <meta name="twitter:card" content="summary">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catatan Jiwa – Viewer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <style>
-    .arsip-bulan {
-      margin-bottom: 2em;
-      padding: 1em;
-      background: #fffaf7;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffdfc;
+      color: #444;
+      line-height: 1.7;
     }
-    .arsip-bulan h3 {
-      font-size: 1.2em;
-      color: #8b5e5e;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 0.3em;
+    .container {
+      max-width: 700px;
+      margin: 4em auto;
+      padding: 0 1.5em;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #6a4c4c;
       margin-bottom: 0.5em;
     }
-    .arsip-bulan ul {
-      padding-left: 1em;
-      margin: 0;
-      list-style: disc;
+    .meta {
+      color: #999;
+      font-size: 0.9em;
+      margin-bottom: 2em;
     }
-    .arsip-bulan li {
-      margin-bottom: 0.6em;
+    .back-link {
+      text-align: center;
+      margin-top: 3em;
+      padding-bottom: 2em;
     }
-    .arsip-bulan a {
-      color: #5c3d3d;
+    .back-link a {
+      color: #6a4c4c;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: bold;
     }
-    .arsip-bulan a:hover {
+    .back-link a:hover {
       text-decoration: underline;
-      color: #a65a5a;
+    }
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .scroll-fade.visible {
+      opacity: 1;
+      transform: none;
     }
   </style>
 </head>
-
 <body>
-  <!-- Navigation -->
-  <nav class="sticky">
-    <a href="index.html">← Beranda</a>
-    <a href="catatan.html" class="active">Catatan Jiwa</a>
-    <a href="jurnal.html">Jurnal Rasa</a>
-    <a href="about.html">Tentang</a>
-  </nav>
 
-  <!-- Header -->
-  <header class="hero-header fade-in">
-    <div class="header-icon"></div>
-    <h1>Catatan Jiwa</h1>
-    <p class="subtitle">Ruang refleksi batin dan napas sunyi yang dituliskan.</p>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    <h3 style="text-align:center;">📚 Arsip Catatan Jiwa</h3>
-    <div id="arsip-catatan"></div>
-
-    <div style="background: rgba(255,255,255,0.85); padding: 2em; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
-      <p>Aku menulis catatan ini seperti menyeduh teh hangat dengan perlahan, penuh perasaan.</p>
-      <p>Bukan sekadar untuk dikenang, tapi untuk dirasakan ulang. Karena setiap kalimat mengandung potongan kisah, dan setiap kisah mengajak kita duduk sejenak di dalam diri sendiri.</p>
-      <p>Selamat membaca, dengan hati yang terbuka dan secangkir kehangatan di tanganmu.</p>
+  <div class="container scroll-fade">
+    <div id="markdown-content">
+      <p>Memuat catatan...</p>
     </div>
 
-    <section class="scroll-fade" style="max-width: 760px; margin: auto; padding: 2em 1em;">
-      <p style="text-align: center; margin-bottom: 2em;">
-        ✨ Temukan versi lengkap dan terupdate di Notion:<br>
-        <a href="https://www.notion.so/rasawarnajiwa/1e580cf2ce2580539252cb9fc196d290?v=1e580cf2ce2581ceba38000c9eaaa331&pvs=4" target="_blank">
-          Baca Catatan Jiwa di Notion →
-        </a>
-      </p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="fade-in">
-    <p>🕊️ Catatan Jiwa oleh Farida Budiarti</p>
-    <div class="social-icons">
-      <a href="mailto:farida584@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://instagram.com/faridabudiarti5" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="back-link">
+      <a href="catatan.html">← Kembali ke Daftar Catatan Jiwa</a>
     </div>
-  </footer>
+  </div>
 
-  <!-- Scroll Animation Script -->
   <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get('file');
+
+    if (file) {
+      fetch('posts/' + file)
+        .then(res => res.text())
+        .then(md => {
+          document.getElementById('markdown-content').innerHTML = marked.parse(md);
+        })
+        .catch(() => {
+          document.getElementById('markdown-content').innerHTML = '<p>Gagal memuat catatan. File tidak ditemukan.</p>';
+        });
+    } else {
+      document.getElementById('markdown-content').innerHTML = '<p>Tidak ada file yang dipilih.</p>';
+    }
+
     const elements = document.querySelectorAll('.scroll-fade');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -109,37 +98,5 @@
     elements.forEach(el => observer.observe(el));
   </script>
 
-  <!-- Daftar Catatan Otomatis dari JSON -->
-  <script>
-    fetch('posts/index.json')
-      .then(res => res.json())
-      .then(data => {
-        const arsip = document.getElementById('arsip-catatan');
-        const grouped = {};
-
-        data.forEach(item => {
-          if (!grouped[item.bulan]) grouped[item.bulan] = [];
-          grouped[item.bulan].push(item);
-        });
-
-        Object.keys(grouped).forEach(bulan => {
-          const section = document.createElement('section');
-          section.className = 'arsip-bulan';
-          const h3 = document.createElement('h3');
-          h3.textContent = bulan;
-          const ul = document.createElement('ul');
-
-          grouped[bulan].forEach(item => {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="viewer.html?file=${item.file}" class="scroll-fade">${item.judul}</a>`;
-            ul.appendChild(li);
-          });
-
-          section.appendChild(h3);
-          section.appendChild(ul);
-          arsip.appendChild(section);
-        });
-      });
-  </script>
 </body>
 </html>
