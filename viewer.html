@@ -17,6 +17,11 @@
       background: #fffdfc;
       color: #444;
       line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #1e1e1e;
+      color: #ccc;
     }
     .container {
       max-width: 700px;
@@ -25,6 +30,9 @@
       background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    body.dark .container {
+      background: #2a2a2a;
     }
     h1, h2 {
       font-family: 'Playfair Display', serif;
@@ -36,17 +44,18 @@
       font-size: 0.9em;
       margin-bottom: 2em;
     }
-    .back-link {
+    .back-link, .nav-nextprev {
       text-align: center;
-      margin-top: 3em;
+      margin-top: 2em;
       padding-bottom: 2em;
     }
-    .back-link a {
+    .back-link a, .nav-nextprev a {
       color: #6a4c4c;
       text-decoration: none;
       font-weight: bold;
+      margin: 0 1em;
     }
-    .back-link a:hover {
+    .back-link a:hover, .nav-nextprev a:hover {
       text-decoration: underline;
     }
     .scroll-fade {
@@ -58,15 +67,29 @@
       opacity: 1;
       transform: none;
     }
+    .toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #eae4dc;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+
+  <button class="toggle-mode" onclick="document.body.classList.toggle('dark')">🌙/☀️</button>
 
   <div class="container scroll-fade">
     <div id="markdown-content">
       <p>Memuat catatan...</p>
     </div>
 
+    <div class="nav-nextprev" id="nav-links"></div>
     <div class="back-link">
       <a href="catatan.html">← Kembali ke Daftar Catatan Jiwa</a>
     </div>
@@ -75,12 +98,26 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const file = params.get('file');
+    const posts = [
+      "2025-05/catatan-tanpa-ingat-waktu.md",
+      "2025-06/Hujan-bulan-juni.md",
+      "2025-07/Juli-datang-lagi.md"
+    ];
 
+    const currentIndex = posts.indexOf(file);
     if (file) {
       fetch('posts/' + file)
         .then(res => res.text())
         .then(md => {
           document.getElementById('markdown-content').innerHTML = marked.parse(md);
+
+          const nav = document.getElementById('nav-links');
+          if (currentIndex > 0) {
+            nav.innerHTML += `<a href="viewer.html?file=${posts[currentIndex - 1]}">← Sebelumnya</a>`;
+          }
+          if (currentIndex < posts.length - 1) {
+            nav.innerHTML += `<a href="viewer.html?file=${posts[currentIndex + 1]}">Berikutnya →</a>`;
+          }
         })
         .catch(() => {
           document.getElementById('markdown-content').innerHTML = '<p>Gagal memuat catatan. File tidak ditemukan.</p>';
