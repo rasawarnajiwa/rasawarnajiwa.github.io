@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Rasa Warna Jiwa</title>
+    <link>https://rasawarnajiwa.github.io/</link>
+    <description>Catatan rasa, refleksi jiwa, dan perjalanan batin dalam warna.</description>
+    <language>id-ID</language>
+    <lastBuildDate>Fri, 28 Jun 2025 00:00:00 +0700</lastBuildDate>
+    <generator>GitHub Pages</generator>
+
+    <item>
+      <title>Catatan Tanpa Ingat Waktu</title>
+      <link>https://rasawarnajiwa.github.io/posts/2025-05/catatan-tanpa-ingat-waktu.md</link>
+      <description>Refleksi rasa dalam ruang tanpa waktu. Menyentuh batin yang jernih.</description>
+      <pubDate>Tue, 27 May 2025 08:00:00 +0700</pubDate>
+      <guid>https://rasawarnajiwa.github.io/posts/2025-05/catatan-tanpa-ingat-waktu.md</guid>
+    </item>
+
+  </channel>
+</rss>
