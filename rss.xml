@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="rss-style.xsl"?>
-<rss version="2.0"
-     xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rasa Warna Jiwa</title>
     <link>https://rasawarnajiwa.github.io/</link>
     <atom:link href="https://rasawarnajiwa.github.io/rss.xml" rel="self" type="application/rss+xml" />
     <description>Catatan rasa, refleksi jiwa, dan perjalanan batin dalam warna.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0700</lastBuildDate>
-    
-    <item>
-      <title>Judul Catatan Pertama</title>
-      <link>https://rasawarnajiwa.github.io/catatan-pertama</link>
-      <guid>https://rasawarnajiwa.github.io/catatan-pertama</guid>
-      <pubDate>Fri, 27 Jun 2025 00:00:00 +0700</pubDate>
-      <description>Ini adalah kutipan atau cuplikan dari catatan pertama kamu.</description>
-    </item>
+    <lastBuildDate>Fri, 27 Jun 2025 23:00:00 +0700</lastBuildDate>
 
-    <!-- Tambahkan item berikutnya di sini -->
-
+    <!-- item kamu di sini -->
   </channel>
 </rss>
