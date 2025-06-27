@@ -5,16 +5,10 @@
     <link>https://rasawarnajiwa.github.io/</link>
     <description>Catatan rasa, refleksi jiwa, dan perjalanan batin dalam warna.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 28 Jun 2025 00:00:00 +0700</lastBuildDate>
-    <generator>GitHub Pages</generator>
+    <lastBuildDate>Sat, 28 Jun 2025 00:00:00 +0700</lastBuildDate>
+    
+    <atom:link href="https://rasawarnajiwa.github.io/rss.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom" />
 
-    <item>
-      <title>Catatan Tanpa Ingat Waktu</title>
-      <link>https://rasawarnajiwa.github.io/posts/2025-05/catatan-tanpa-ingat-waktu.md</link>
-      <description>Refleksi rasa dalam ruang tanpa waktu. Menyentuh batin yang jernih.</description>
-      <pubDate>Tue, 27 May 2025 08:00:00 +0700</pubDate>
-      <guid>https://rasawarnajiwa.github.io/posts/2025-05/catatan-tanpa-ingat-waktu.md</guid>
-    </item>
-
+    <!-- post items akan di sini -->
   </channel>
 </rss>
