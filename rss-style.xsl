@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" 
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:rss="http://purl.org/rss/1.0/">
 
-  <xsl:output method="html" encoding="UTF-8" indent="yes"/>
-
-  <xsl:template match="/">
-    <html>
-      <head>
-        <title><xsl:value-of select="rss/channel/title"/></title>
-        <style>
-          body { font-family: 'Segoe UI', sans-serif; background: #fffbe6; color: #333; margin: 2rem; }
-          h1 { color: #703c1b; }
-          .item { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #ccc; }
-          .pubDate { font-size: 0.9em; color: #666; }
-          a { color: #c25e00; text-decoration: none; }
-          a:hover { text-decoration: underline; }
-        </style>
-      </head>
-      <body>
-        <h1><xsl:value-of select="rss/channel/title"/></h1>
-        <p><xsl:value-of select="rss/channel/description"/></p>
-        <xsl:for-each select="rss/channel/item">
-          <div class="item">
-            <h2><a href="{link}"><xsl:value-of select="title"/></a></h2>
-            <div class="pubDate"><xsl:value-of select="pubDate"/></div>
-            <p><xsl:value-of select="description"/></p>
+<xsl:template match="/">
+  <html>
+    <head>
+      <title>Rasa Warna Jiwa – RSS Feed</title>
+      <style>
+        body { font-family: sans-serif; background: #fdfdfd; color: #333; padding: 2em; }
+        h1 { color: #ad5f77; }
+        .item { margin-bottom: 1.5em; }
+        .item-title { font-size: 1.2em; font-weight: bold; }
+        .item-description { margin-top: 0.2em; }
+        .item-date { font-size: 0.85em; color: #999; }
+      </style>
+    </head>
+    <body>
+      <h1>📡 Rasa Warna Jiwa – Feed</h1>
+      <xsl:for-each select="rss/channel/item">
+        <div class="item">
+          <div class="item-title">
+            <a href="{link}">
+              <xsl:value-of select="title"/>
+            </a>
           </div>
-        </xsl:for-each>
-      </body>
-    </html>
-  </xsl:template>
+          <div class="item-description">
+            <xsl:value-of select="description"/>
+          </div>
+          <div class="item-date">
+            <xsl:value-of select="pubDate"/>
+          </div>
+        </div>
+      </xsl:for-each>
+    </body>
+  </html>
+</xsl:template>
 
 </xsl:stylesheet>
