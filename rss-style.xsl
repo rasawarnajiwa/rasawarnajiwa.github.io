@@ -6,64 +6,89 @@
     <html>
       <head>
         <title><xsl:value-of select="rss/channel/title"/> – Feed</title>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand&display=swap" rel="stylesheet" />
         <style type="text/css">
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro&display=swap');
+
           body {
-            background-color: #fdf6f1;
-            font-family: 'Quicksand', sans-serif;
-            color: #3c2a24;
-            margin: 2em;
+            background-color: #fcf5ee;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333;
+            margin: 2em auto;
+            max-width: 700px;
+            padding: 1em;
           }
+
           h1 {
             font-family: 'Playfair Display', serif;
-            color: #9e4f63;
-            border-bottom: 2px solid #d9b9c3;
-            padding-bottom: 0.3em;
-            display: flex;
-            align-items: center;
+            font-size: 1.8em;
+            color: #953c6f;
+            margin-bottom: 0.2em;
           }
-          h1 img {
-            height: 40px;
+
+          .logo {
+            width: 50px;
+            vertical-align: middle;
             margin-right: 10px;
           }
-          h2 {
-            color: #8e3e4e;
-            font-size: 1.2em;
-          }
-          .item {
-            margin: 1em 0;
-            padding: 1em;
-            background-color: #fffaf9;
-            border-left: 4px solid #d88c9a;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-          }
-          .desc {
-            font-size: 0.95em;
-            margin: 0.3em 0;
-          }
-          .date {
-            font-size: 0.8em;
-            color: #888;
-          }
-          .tagline {
+
+          .subtitle {
             font-style: italic;
-            font-size: 1em;
-            color: #5f444a;
+            color: #777;
             margin-bottom: 1.5em;
+            font-size: 0.95em;
+          }
+
+          .item {
+            background: #fff6f6;
+            border-left: 4px solid #953c6f;
+            padding: 1em;
+            margin-bottom: 1em;
+            border-radius: 6px;
+          }
+
+          .item-title {
+            font-weight: bold;
+            color: #802a50;
+            text-decoration: none;
+          }
+
+          .item-desc {
+            margin-top: 0.5em;
+            font-size: 0.95em;
+          }
+
+          .pubdate {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 0.6em;
           }
         </style>
       </head>
+
       <body>
-        <h1>
-          <img src="https://rasawarnajiwa.github.io/assets/logo.png" alt="logo" />
-          <xsl:value-of select="rss/channel/title"/> – Feed
-        </h1>
-        <div class="tagline">“Rasa adalah bahasa pertama jiwa. Sebelum kata, sebelum warna.”</div>
+        <div>
+          <img class="logo" src="https://rasawarnajiwa.github.io/assets/logo.png" alt="Logo"/>
+          <h1><xsl:value-of select="rss/channel/title"/> – Feed</h1>
+        </div>
+        <div class="subtitle">“Rasa adalah bahasa pertama jiwa. Sebelum kata, sebelum warna.”</div>
+
         <xsl:for-each select="rss/channel/item">
           <div class="item">
-            <h2>🌸 <a href="{link}"><xsl:value-of select="title"/></a></h2>
-            <div class="desc"><xsl:value-of select="description"/></div>
-            <div class="date"><xsl:value-of select="pubDate"/></div>
+            <div>
+              <span>📖</span>
+              <a class="item-title">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="link"/>
+                </xsl:attribute>
+                <xsl:value-of select="title"/>
+              </a>
+            </div>
+            <div class="item-desc">
+              <xsl:value-of select="description"/>
+            </div>
+            <div class="pubdate">
+              <xsl:value-of select="pubDate"/>
+            </div>
           </div>
         </xsl:for-each>
       </body>
