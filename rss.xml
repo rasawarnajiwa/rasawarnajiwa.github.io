@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml-stylesheet type="text/xsl" href="https://rasawarnajiwa.github.io/style.xsl"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Rasa Warna Jiwa</title>
     <link>https://rasawarnajiwa.github.io/</link>
-    <atom:link href="https://rasawarnajiwa.github.io/rss.xml" rel="self" type="application/rss+xml" />
-    <description>Catatan rasa, refleksi jiwa, dan perjalanan batin dalam warna.</description>
+    <atom:link href="https://rasawarnajiwa.github.io/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Catatan rasa, refleksi, jiwa, dan perjalanan batin dalam warna.</description>
     <language>id-ID</language>
     <lastBuildDate>Sun, 29 Jun 2025 11:30:00 +0700</lastBuildDate>
 
     <item>
       <title>Bisik Jalan DI Panjaitan</title>
-      <link>https://www.notion.so/rasawarnajiwa/Bisik-Jalan-DI-Panjaitan-21c80cf2ce2580ecbe3bf790ae81db22</link>
-      <description><![CDATA[Hidup sering kita lihat dalam dua warna: hitam dan putih. Siapa salah, siapa benar. Siapa pahlawan, siapa pengkhianat. Tapi kisah seperti ini mengingatkan: hidup tak sesederhana itu.]]></description>
+      <link>https://www.notion.so/rasawarnajiwa/Bisik-Jalan-DI-Panjaitan-21c80cf2ce2580ecb3bf790ae81db22f</link>
+      <description><![CDATA[ Hidup sering kita lihat dalam dua warna: hitam dan putih. Siapa salah, siapa benar. Siapa pahlawan, siapa pengkhianat. Tapi kisah seperti ini mengingatkan: hidup tak sesederhana itu. ]]></description>
       <pubDate>Sun, 29 Jun 2025 09:00:00 +0700</pubDate>
       <guid isPermaLink="false">bisik-jalan-di-panjaitan</guid>
     </item>
