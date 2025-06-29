@@ -1,86 +1,21 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RSS Feed – Rasa Warna Jiwa</title>
-  <link rel="stylesheet" href="rss-style.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro&display=swap');
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="rss-style.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rasa Warna Jiwa</title>
+    <link>https://rasawarnajiwa.github.io/</link>
+    <atom:link href="https://rasawarnajiwa.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Catatan rasa, refleksi jiwa, dan perjalanan batin dalam warna.</description>
+    <language>id-ID</language>
+    <lastBuildDate>Fri, 27 Jun 2025 23:00:00 +0700</lastBuildDate>
 
-    body {
-      background-color: #fcf5ee;
-      font-family: 'Source Sans Pro', sans-serif;
-      color: #333;
-      margin: 2em auto;
-      max-width: 700px;
-      padding: 1em;
-    }
+    <item>
+      <title>Bisik Jalan DI Panjaitan</title>
+      <link>https://www.notion.so/rasawarnajiwa/Bisik-Jalan-DI-Panjaitan-21c80cf2ce2580ecbe3bf790ae81db22</link>
+      <description>Hidup sering kita lihat dalam dua warna: hitam dan putih. Siapa salah, siapa benar. Siapa pahlawan, siapa pengkhianat. Tapi kisah seperti ini mengingatkan: hidup tak sesederhana itu.</description>
+      <pubDate>Tue, 24 Jun 2025 09:00:00 +0700</pubDate>
+      <guid isPermaLink="false">bisik-jalan-di-panjaitan</guid>
+    </item>
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8em;
-      color: #953c6f;
-      margin-bottom: 0.2em;
-    }
-
-    .subtitle {
-      font-style: italic;
-      color: #777;
-      margin-bottom: 1.5em;
-      font-size: 0.95em;
-    }
-
-    .item {
-      background: #fff6f6;
-      border-left: 4px solid #953c6f;
-      padding: 1em;
-      margin-bottom: 1em;
-      border-radius: 6px;
-    }
-
-    .item-title {
-      font-weight: bold;
-      color: #802a50;
-      text-decoration: none;
-    }
-
-    .pubdate {
-      font-size: 0.85em;
-      color: #888;
-      margin-top: 0.6em;
-    }
-  </style>
-</head>
-<body>
-  <img src="assets/logo.png" alt="Logo" width="50" style="vertical-align: middle; margin-right: 10px;">
-  <h1>Rasa Warna Jiwa – Feed</h1>
-  <div class="subtitle">“Rasa adalah bahasa pertama jiwa. Sebelum kata, sebelum warna.”</div>
-  <div id="rss-container"></div>
-
-  <script>
-    fetch('https://rasawarnajiwa.github.io/rss.xml')
-      .then(response => response.text())
-      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-      .then(data => {
-        const items = data.querySelectorAll("item");
-        let html = "";
-        items.forEach(el => {
-          const title = el.querySelector("title").textContent;
-          const link = el.querySelector("link").textContent;
-          const description = el.querySelector("description").textContent;
-          const pubDate = el.querySelector("pubDate").textContent;
-
-          html += `
-            <div class="item">
-              <a class="item-title" href="${link}" target="_blank">📖 ${title}</a>
-              <div>${description}</div>
-              <div class="pubdate">${pubDate}</div>
-            </div>
-          `;
-        });
-        document.getElementById("rss-container").innerHTML = html;
-      });
-  </script>
-</body>
-</html>
+  </channel>
+</rss>
