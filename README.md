@@ -5,7 +5,7 @@ Selamat datang di proyek pribadi **Rasa Warna Jiwa** – ruang digital untuk men
 ## 🌿 Tentang Proyek Ini
 Website ini dibuat dengan GitHub Pages dan ditulis dengan penuh cinta. Isinya mencakup:
 - **Jurnal Rasa**: resep sehat dan mindful
-- **Catatan Jiwa**: refleksi, perjalanan batin, dan kutipan bermakna
+- **Warna Jiwa**: refleksi, perjalanan batin, dan kutipan bermakna
 - **Galeri Visual**: gambar-gambar yang menyentuh jiwa dan alam
 
 ## 🚀 Cara Mengakses
